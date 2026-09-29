@@ -1,0 +1,116 @@
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff; /* fundo branco */
+  color: #000000;            /* texto preto */
+  padding: 16px;
+  line-height: 1.5;
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 3px solid #0033a0; /* detalhe azul */
+  margin-bottom: 20px;
+}
+
+.cabecalho h1 {
+  color: #0033a0;
+  font-size: 28px;
+}
+
+.subtitulo {
+  color: #000000;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+/* ===== Cards de resumo ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background-color: #ffffff;       /* fundo branco */
+  border: 2px solid #0033a0;       /* borda azul */
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 14px;
+  color: #0033a0;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* ===== Tabela ===== */
+.tabela-container {
+  overflow-x: auto; /* permite rolar no celular */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px; /* garante leitura no celular com rolagem */
+}
+
+thead th {
+  background-color: #0033a0;
+  color: #ffffff;
+  padding: 10px;
+  border: 1px solid #0033a0;
+  font-size: 14px;
+  text-align: center;
+}
+
+tbody td {
+  background-color: #ffffff;
+  border: 1px solid #0033a0; /* borda azul */
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #000000;
+}
+
+/* Destaque para situações */
+.situacao-bom {
+  color: #006400; /* verde escuro */
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: #b00020; /* vermelho escuro */
+  font-weight: bold;
+}
+
+.situacao-indisponivel {
+  color: #555555;
+  font-style: italic;
+}
+
+/* ===== Ajustes para celular ===== */
+@media (max-width: 500px) {
+  .cabecalho h1 {
+    font-size: 22px;
+  }
+  .card p {
+    font-size: 18px;
+  }
+}
