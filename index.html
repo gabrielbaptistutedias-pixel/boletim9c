@@ -1,4 +1,4 @@
-Meu boletim
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,52 +12,107 @@ Meu boletim
   <!-- Cabeçalho -->
   <header class="cabecalho">
     <h1>Boletim Digital</h1>
-    <p class="subtitulo">9º Ano</p>
+    <p class="subtitulo">9º Ano - Turma 9C - Nº 12</p>
   </header>
 
-  <!-- Cards de resumo -->
-  <section class="cards">
-    <div class="card">
-      <h2>Média Geral</h2>
-      <p id="media-geral">—</p>
+  <!-- Área de Acesso (PIN) -->
+  <section id="area-login" class="card-login">
+    <h2>Acesso ao Boletim</h2>
+    <div class="login-info">
+      <p><strong>Turma:</strong> 9C</p>
+      <p><strong>Chamada:</strong> 12</p>
     </div>
-    <div class="card">
-      <h2>Total de Faltas</h2>
-      <p id="total-faltas">—</p>
+    <div class="login-form">
+      <label for="input-pin">Informe seu PIN:</label>
+      <input type="password" id="input-pin" maxlength="10" placeholder="Digite o PIN" />
+      <button type="button" id="btn-entrar">Entrar</button>
     </div>
-    <div class="card">
-      <h2>Bom Desempenho</h2>
-      <p id="qtd-bom">—</p>
-    </div>
-    <div class="card">
-      <h2>Precisam de Atenção</h2>
-      <p id="qtd-atencao">—</p>
-    </div>
-    <div class="card">
-      <h2>Frequência</h2>
-      <p id="frequencia">—</p>
-    </div>
+    <p id="msg-login" class="mensagem-status"></p>
   </section>
 
-  <!-- Tabela de notas -->
-  <section class="tabela-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Disciplina</th>
-          <th>1º Tri</th>
-          <th>2º Tri</th>
-          <th>3º Tri</th>
-          <th>Média</th>
-          <th>Faltas</th>
-          <th>Situação</th>
-        </tr>
-      </thead>
-      <tbody id="corpo-tabela">
-        <!-- As linhas serão inseridas pelo JavaScript -->
-      </tbody>
-    </table>
-  </section>
+  <!-- Conteúdo Principal do Boletim (Oculto antes do login) -->
+  <div id="conteudo-boletim" class="oculto">
+    
+    <!-- Painel de Ações -->
+    <div class="painel-acoes">
+      <button type="button" id="btn-editar">Alterar dados</button>
+    </div>
+
+    <!-- Modal / Formulário de Edição -->
+    <section id="area-edicao" class="modal-edicao oculto">
+      <div class="conteudo-modal">
+        <h2>Editar Notas e Faltas</h2>
+        <div id="msg-edicao" class="mensagem-status"></div>
+        <div class="tabela-edicao-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Faltas 1º Tri</th>
+                <th>Faltas 2º Tri</th>
+                <th>Faltas 3º Tri</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela-edicao">
+              <!-- Linhas para edição via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-botoes">
+          <button type="button" id="btn-salvar">Salvar alterações</button>
+          <button type="button" id="btn-cancelar" class="btn-secundario">Cancelar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards de resumo -->
+    <section class="cards">
+      <div class="card">
+        <h2>Média Geral</h2>
+        <p id="media-geral">—</p>
+      </div>
+      <div class="card">
+        <h2>Total de Faltas</h2>
+        <p id="total-faltas">—</p>
+      </div>
+      <div class="card">
+        <h2>Bom Desempenho</h2>
+        <p id="qtd-bom">—</p>
+      </div>
+      <div class="card">
+        <h2>Precisam de Atenção</h2>
+        <p id="qtd-atencao">—</p>
+      </div>
+      <div class="card">
+        <h2>Frequência</h2>
+        <p id="frequencia">—</p>
+      </div>
+    </section>
+
+    <!-- Tabela de notas -->
+    <section class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>1º Tri</th>
+            <th>2º Tri</th>
+            <th>3º Tri</th>
+            <th>Média</th>
+            <th>Faltas</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+          <!-- As linhas serão inseridas pelo JavaScript -->
+        </tbody>
+      </table>
+    </section>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
