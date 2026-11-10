@@ -191,6 +191,63 @@ button:hover {
   color: #000000;
 }
 
+/* ===== Área de Gráficos ===== */
+.area-graficos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.grafico-card {
+  background-color: #ffffff;
+  border: 2px solid #0033a0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grafico-card h2 {
+  font-size: 16px;
+  color: #0033a0;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.grafico-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  flex-grow: 1;
+}
+
+/* Badge / Alerta de Perigo para Faltas */
+#estadoFaltas {
+  text-align: center;
+  margin-bottom: 8px;
+  min-height: 24px;
+}
+
+.badge-perigo {
+  display: inline-block;
+  background-color: #b00020;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-perigo {
+  border-color: #b00020 !important;
+  box-shadow: 0 0 8px rgba(176, 0, 32, 0.3);
+}
+
 /* ===== Tabela ===== */
 .tabela-container {
   overflow-x: auto;
@@ -234,6 +291,23 @@ tbody td {
 .situacao-indisponivel {
   color: #555555;
   font-style: italic;
+}
+
+/* ===== Adaptabilidade Responsiva dos Gráficos ===== */
+@media (max-width: 1024px) {
+  .area-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .area-graficos {
+    grid-template-columns: 1fr;
+  }
+
+  .grafico-container {
+    height: 280px;
+  }
 }
 
 /* ===== Ajustes para celular ===== */
