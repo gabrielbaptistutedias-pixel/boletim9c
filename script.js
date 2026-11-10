@@ -57,3 +57,15 @@ function validarNotaDigitada(valorStr) {
   let str = valorStr.trim().replace(",", ".");
   let num = Number(str);
   if (isNaN(num) || num < 0 || num > 10) {
+    return { valida: false, valor: null };
+  }
+  return { valida: true, valor: num };
+}
+
+/* Validação para faltas inseridas na edição (inteiro >= 0) */
+function validarFaltaDigitada(valorStr) {
+  if (valorStr === null || valorStr === undefined || valorStr.trim() === "") {
+    return { valida: false, valor: null };
+  }
+  let str = valorStr.trim();
+  if (!/^\
